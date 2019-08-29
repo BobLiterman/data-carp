@@ -125,4 +125,28 @@ surveys %>%
 # Use group_by() + summarize() to find the 
 # min, mean, and max hindfoot_length by
 # species and sex
+surveys %>% drop_na() %>% group_by(species_id,sex) %>%
+  summarize(mean_hindfoot = mean(hindfoot_length),
+            min_hindfoot = min(hindfoot_length),
+            max_hindfoot = max(hindfoot_length))
 
+surveys %>% group_by(species_id,sex) %>%
+  summarize(mean_hindfoot = mean(hindfoot_length,na.rm = TRUE),
+            min_hindfoot = min(hindfoot_length,na.rm = TRUE),
+            max_hindfoot = max(hindfoot_length,na.rm = TRUE))
+
+table(surveys$plot_id)
+
+surveys %>% count(sex)
+# FINAL CHALLENGE
+# 1) Remove NA data from surveys
+# 2) Calculate hindfoot_length squared (^2)
+# 3) Filter by HL^2 > 20
+# 4) Group by sex,species_id, calculate 
+#    mean weight
+
+surveys %>% drop_na() %>%
+  mutate(hl2 = hindfoot_length^2) %>%
+  filter(hl2 > 20) %>%
+  group_by(sex,species_id) %>%
+  summarise(mean_weight = mean(weight))
