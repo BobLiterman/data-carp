@@ -1,1 +1,4 @@
-# Test line
+# Download raw data
+
+download.file(url="https://ndownloader.figshare.com/files/2292169",
+              destfile = "data/portal_data_joined.csv")
