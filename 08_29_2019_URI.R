@@ -76,4 +76,22 @@ no_label <- select(surveys,-species_id)
 
 # CHALLENGE
 # (1) Write a line of code to remove  the taxa column from surveys
+no_label <- select(surveys,-taxa)
 # (2) Make a new dataframe containing the plot_id,and species_id
+plot_species <- select(surveys,plot_id,species_id)
+
+# Get the weights of male animals in 1995
+# STEP 1
+male_data_1995 <- filter(surveys,year==1995 & sex=="M")
+weight_male_1995 <- select(male_data_1995,weight)
+
+filter(surveys,year==1995,sex=="M")
+
+select(filter(surveys,year==1995,sex=="M"),weight)
+
+male_1995_weight <- surveys %>% #Take surveys...
+  filter(year==1995,sex=="M") %>% # Filter 1995 Males
+  select(weight) # Get weight column
+
+# Using pipes,make  a new DF containing data from the year 2000, 
+# and with the columns genus, sex, weight
