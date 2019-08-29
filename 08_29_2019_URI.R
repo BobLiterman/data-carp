@@ -35,3 +35,22 @@ unique(surveys$plot_type)
 # Get number of columns and rows
 nrow(surveys)
 ncol(surveys)
+
+# How to get data from 1995?
+data_1995 <- filter(surveys,year == 1995)
+
+# How do we get data from before 2001?
+filter(surveys,year<2001)
+filter(surveys,year <= 2001)
+
+# ==
+# >
+# <
+# >=
+# <=
+# !=
+not_1995 <-  filter(surveys,year!=1995)
+
+#CHALLENGE
+# Filter the surveys dataset to all results from 2001.
+# Filter the surveys dataset to only January records.
