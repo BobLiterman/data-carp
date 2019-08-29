@@ -18,3 +18,20 @@ View(surveys)
 
 # Get data summary
 summary(surveys)
+
+# Load tidyverse library
+install.packages("tidyverse")
+library(tidyverse)
+
+# Read in (Tidyverse)
+surveys <- read_csv("portal_data_joined.csv")
+
+head(surveys)
+tail(surveys)
+
+# Get unique plot types from surveys
+unique(surveys$plot_type)
+
+# Get number of columns and rows
+nrow(surveys)
+ncol(surveys)
