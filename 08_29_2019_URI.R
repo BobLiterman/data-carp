@@ -66,3 +66,14 @@ no_missing_weights <- filter(surveys,!(is.na(weight)))
 # | is 'or'
 filter(surveys,year==1995 & month==1)
 filter(surveys,year==1995 | year==1996)
+
+# select() allows you to choose columns of interest
+
+hibernation_data <- select(surveys,month,day,year,genus,species,taxa)
+hibernation_data <- select(hibernation_data,year,month,day,genus,species,taxa)
+
+no_label <- select(surveys,-species_id)
+
+# CHALLENGE
+# (1) Write a line of code to remove  the taxa column from surveys
+# (2) Make a new dataframe containing the plot_id,and species_id
