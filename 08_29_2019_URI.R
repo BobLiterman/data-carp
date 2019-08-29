@@ -94,4 +94,4 @@ male_1995_weight <- surveys %>% #Take surveys...
   select(weight) # Get weight column
 
 # Using pipes,make  a new DF containing data from the year 2000, 
-# and with the columns genus, sex, weight
+# and with the columns genus, sex, weights
