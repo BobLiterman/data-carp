@@ -15,3 +15,6 @@ surveys <- read.csv("portal_data_joined.csv")
 # Inspect data
 head(surveys)
 View(surveys)
+
+# Get data summary
+summary(surveys)
