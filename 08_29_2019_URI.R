@@ -117,5 +117,12 @@ surveys %>%
   summarize(mean_weight = mean(weight),
             max_weight = max(weight),
             min_weight = min(weight),
-            sd_weight = sd(weight))
+            sd_weight = sd(weight)) %>%
+  arrange(min_weight) %>%
+  head()
   
+# CHALLENGE
+# Use group_by() + summarize() to find the 
+# min, mean, and max hindfoot_length by
+# species and sex
+
