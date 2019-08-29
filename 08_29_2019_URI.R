@@ -95,3 +95,27 @@ male_1995_weight <- surveys %>% #Take surveys...
 
 # Using pipes,make  a new DF containing data from the year 2000, 
 # and with the columns genus, sex, weights
+surveys %>% filter(year>=2000) %>% select(sex,weight,genus)
+
+View(surveys)
+
+surveys %>% mutate(weight_kg = weight/1000)
+
+# CHALLENGE
+# Create a new column in surveys that is equal to 1/2
+# of the hindfoot_length
+surveys %>% mutate(hindfoot_length_half = hindfoot_length/2)
+
+#Compare weights of males and females
+male_data <- surveys %>% filter(sex=="M")
+female_data <- surveys %>% filter(sex=="F")
+mean(male_data$weight,na.rm = TRUE)
+
+surveys %>%
+  drop_na() %>%
+  group_by(species_id,sex) %>%
+  summarize(mean_weight = mean(weight),
+            max_weight = max(weight),
+            min_weight = min(weight),
+            sd_weight = sd(weight))
+  
