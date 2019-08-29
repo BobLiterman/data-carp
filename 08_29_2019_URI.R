@@ -53,4 +53,10 @@ not_1995 <-  filter(surveys,year!=1995)
 
 #CHALLENGE
 # Filter the surveys dataset to all results from 2001.
+data_2001 <- filter(surveys,year==2001)
+
 # Filter the surveys dataset to only January records.
+data_january <- filter(surveys,month==1)
+
+# Removing missing data via filter
+no_missing_weights <- filter(surveys,!(is.na(weight)))
