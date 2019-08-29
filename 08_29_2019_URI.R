@@ -60,3 +60,9 @@ data_january <- filter(surveys,month==1)
 
 # Removing missing data via filter
 no_missing_weights <- filter(surveys,!(is.na(weight)))
+
+# January observations from the year 1995
+# & is 'and'
+# | is 'or'
+filter(surveys,year==1995 & month==1)
+filter(surveys,year==1995 | year==1996)
